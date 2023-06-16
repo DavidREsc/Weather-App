@@ -1,0 +1,24 @@
+*,*::before,*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+
+.content {
+    background-color: #242424;
+    height: 100vh;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 20rem auto;
+    color: white;
+    gap: 2rem;
+}
