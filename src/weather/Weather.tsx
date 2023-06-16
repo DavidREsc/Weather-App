@@ -1,6 +1,8 @@
+import '../_styles/weather.css'
+
 const Weather: React.FC = () => {
     return (
-        <div>Weather</div>
+        <div className='weather-container'>Weather</div>
     )
 }
 

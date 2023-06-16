@@ -1,0 +1,40 @@
+aside {
+    background-color: rgba(96, 130, 182, 0.25);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 10%;
+    border-radius: 10px;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3.5rem;
+}
+
+.nav-link {
+    display: flex;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    transition: all 300ms ease;
+}
+
+.nav-link.active, .nav-link:hover {
+    color: rgba(255, 255, 255, 1)
+}
+
+.nav-icon {
+    font-size: 1.15rem;
+}
+
+.menu-btn {
+    font-size: 1.5rem;
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    background-color: blue;
+}

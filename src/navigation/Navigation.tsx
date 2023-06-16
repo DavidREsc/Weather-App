@@ -1,10 +1,11 @@
-import {NavLink, Outlet} from 'react-router-dom'
-
+import {Outlet} from 'react-router-dom'
+import NavBar from './NavBar';
+import '../_styles/navigation.css'
 
 const Navigation: React.FC = () => {
     return (
         <>
-            <NavLink to='weather'>Weather</NavLink>
+            <NavBar />
             <Outlet />
         </>
     )

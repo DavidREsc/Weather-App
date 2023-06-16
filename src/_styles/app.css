@@ -18,7 +18,23 @@ body {
     height: 100vh;
     padding: 2rem;
     display: grid;
-    grid-template-columns: 20rem auto;
     color: white;
     gap: 2rem;
+}
+
+h1 {
+    font-weight: 400;
+    font-size: 2.2rem;
+}
+
+@media screen and (min-width: 320px) {
+    .content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content {
+        grid-template-columns: 20rem auto;
+    }
 }
