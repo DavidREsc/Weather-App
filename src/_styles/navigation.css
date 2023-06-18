@@ -1,11 +1,11 @@
 aside {
-    background-color: rgba(96, 130, 182, 0.25);
+    background-color: var(--color-primary);
     padding: 2rem;
-    display: flex;
     align-items: center;
     gap: 10%;
     border-radius: 10px;
     flex-direction: column;
+    overflow: auto;
 }
 
 nav {
@@ -17,13 +17,13 @@ nav {
 .nav-link {
     display: flex;
     gap: 10px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-info-dark);
     text-decoration: none;
     transition: all 300ms ease;
 }
 
 .nav-link.active, .nav-link:hover {
-    color: rgba(255, 255, 255, 1)
+    color: var(--color-info);
 }
 
 .nav-icon {
@@ -32,9 +32,41 @@ nav {
 
 .menu-btn {
     font-size: 1.5rem;
-    position: absolute;
     background: none;
     border: none;
-    color: white;
-    background-color: blue;
+    color: var(--color-info);
+    cursor: pointer;
+    align-self: end;
+    margin: 1rem;
 }
+
+@media screen and (min-width: 320px){
+    .menu-btn.active {
+        display: block;
+    }
+    aside {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        height: 100vh;
+        left: -100%;
+        transition: all 350ms ease;
+    }
+    aside.active {
+        left: 0;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .menu-btn.active {
+        display: none;
+    }
+    aside {
+        display: flex;
+        position: relative;
+        left: 0;
+        height: unset;
+    }
+}
+
+

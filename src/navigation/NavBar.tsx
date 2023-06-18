@@ -2,9 +2,13 @@ import Navlink from "./Navlink";
 import {ImEarth} from 'react-icons/im'
 import {TfiLayoutPlaceholder} from 'react-icons/tfi'
 
-const NavBar: React.FC = () => {
+interface NavBarProps {
+    active: boolean;
+}
+
+const NavBar: React.FC<NavBarProps> = ({active}) => {
     return (
-        <aside>
+        <aside className={active ? 'active' : ''}>
             <h1>Weather App</h1>
             <nav>
                 <Navlink path='weather' name='Weather' renderIcon={ImEarth}/>

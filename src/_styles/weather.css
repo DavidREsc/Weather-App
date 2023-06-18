@@ -1,3 +1,55 @@
 .weather-container {
-   
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.city-input {
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    border: none;
+    outline: none;
+    color: var(--color-info);
+}
+
+.current-weather {
+    background-color: #222;
+    height: 20rem;
+}
+
+.previous-5-days {
+    background-color: #222;
+    height: 20rem;
+}
+
+.status-icon {
+    width: 5rem;
+}
+
+@media screen and (min-width: 320px) {
+    .weather-container {
+        align-items: center;
+        width: 100%;
+    }
+    .city-input {
+        width: 95%;
+    }
+    .current-weather {
+        width: 95%;
+    }
+
+    .previous-5-days {
+        width: 95%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .weather-container {
+        align-items: start;
+    }
+    .city-input {
+        width: 25rem;
+    }
 }

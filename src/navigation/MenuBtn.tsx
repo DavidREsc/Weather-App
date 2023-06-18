@@ -1,8 +1,12 @@
 import {AiOutlineMenu} from 'react-icons/ai'
 
-const MenuBtn: React.FC = () => {
+interface MenuBtnProps {
+    handleActive: () => void;
+}
+
+const MenuBtn: React.FC<MenuBtnProps> = ({handleActive}) => {
     return (
-        <button className='menu-btn'><AiOutlineMenu /></button>
+        <button className='menu-btn active' onClick={handleActive}><AiOutlineMenu /></button>
     )
 }
 

@@ -3,6 +3,12 @@
     margin: 0;
 }
 
+:root {
+    --color-info: #e9e9e9;
+    --color-info-dark: #888;
+    --color-primary: #222;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -11,30 +17,58 @@ html, body {
 
 body {
     font-family: Roboto, sans-serif;
+    background-color: #111;
 }
 
 .content {
-    background-color: #242424;
+    background-color: #111;
     height: 100vh;
-    padding: 2rem;
-    display: grid;
-    color: white;
-    gap: 2rem;
+    color: var(--color-info);
+    overflow: auto;
 }
 
 h1 {
     font-weight: 400;
-    font-size: 2.2rem;
+    font-size: 2rem;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 1.6rem;
 }
 
 @media screen and (min-width: 320px) {
     .content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .content {
+        display: grid;
+        grid-template-columns: 10rem auto;
+        padding: 2rem 2rem 2rem 2rem;
+        gap: 2rem;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .content {
+        grid-template-columns: 17rem auto;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .content {
         grid-template-columns: 20rem auto;
+    }
+}
+
+@media screen and (min-width: 2560px) {
+    .content {
+        grid-template-columns: 20rem auto;
+        gap: 10rem;
+        padding-right: 10rem;
     }
 }
