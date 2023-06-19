@@ -13,17 +13,17 @@ const Status: React.FC<StatusProps> = ({status}) => {
     
     const renderStatusIcon = () => {
         switch (status) {
-            case "cloudy":
+            case "Clouds":
                 return Cloudy;
-            case "partly_cloudy":
+            case "Atmosphere":
                 return PartlyCloudy
-            case "rain":
+            case "Rain":
                 return Rain
-            case "snow":
+            case "Snow":
                 return Snow
-            case "sun":
+            case "Clear":
                 return Sun
-            case "thunder_storm":
+            case "Thunderstorm":
                 return ThunderStorm
             default:
                 return undefined;

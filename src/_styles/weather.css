@@ -1,11 +1,22 @@
 .weather-container {
+    display: grid;
+}
+
+.weather-container section {
+    margin-top: 4rem;
+}
+
+.weather-container section:first-child {
+    margin: 0;
+}
+
+.city-form {
     display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .city-input {
-    padding: 1rem;
+    padding: 0.7rem;
     font-size: 1rem;
     border-radius: 10px;
     background-color: var(--color-primary);
@@ -14,14 +25,37 @@
     color: var(--color-info);
 }
 
+.city-submit {
+    color: var(--color-info);
+    border: 1px solid var(--color-secondary);
+    border-radius: 10px;
+    width: 7rem;
+    background: none;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.city-submit:hover {
+    background-color: var(--color-secondary-dark);
+    color: var(--color-secondary);
+}
+
 .current-weather {
     background-color: #222;
     height: 20rem;
+    margin-top: 1rem;
 }
 
 .previous-5-days {
     background-color: #222;
     height: 20rem;
+    margin-top: 1rem;
+}
+
+.other-cities {
+    background-color: #222;
+    height: 20rem;
+    margin-top: 1rem;
 }
 
 .status-icon {
@@ -30,8 +64,12 @@
 
 @media screen and (min-width: 320px) {
     .weather-container {
+        grid-template-columns: 1fr;
+    }
+    .weather-container section {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        width: 100%;
     }
     .city-input {
         width: 95%;
@@ -43,11 +81,18 @@
     .previous-5-days {
         width: 95%;
     }
+
+    .other-cities {
+        width: 95%;
+    }
 }
 
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1025px) {
     .weather-container {
-        align-items: start;
+        grid-template-columns: auto 20rem;
+    }
+    .weather-container section {
+        display: block;
     }
     .city-input {
         width: 25rem;
