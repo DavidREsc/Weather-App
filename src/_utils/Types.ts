@@ -1,5 +1,5 @@
 export type Coordinates = [number, number]
-export type Cities = string[]
+export type Cities = ICity[]
 export interface ICity {
     country: string;
     lat: number;
@@ -12,22 +12,33 @@ export interface ICurrentWeather {
     main: {
         humidity: number;
         temp: number;
+        feels_like: number;
     },
     name: string;
     weather: IWeather[],
+    dt: number;
     wind: {
         speed: number;
+        gust: number;
+    }
+    sys: {
+        country: string;
+        sunset: number;
+        sunrise: number;
     }
 }
 export interface IWeather {
     description: string;
     main: string;
 }
+export interface IHourlyWeather {
+    temp: number;
+    wind_speed: number;
+    weather: IWeather[];
+    dt: number;
+    humidity: number;
+}
 export interface IPreviousWeather {
-    current: {
-        temp: number;
-        wind_speed: number;
-        weather: IWeather[]
-    }
+    hourly: IHourlyWeather[];
 }
 export type PreviousWeatherData = IPreviousWeather[]

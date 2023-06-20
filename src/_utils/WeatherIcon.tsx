@@ -1,20 +1,23 @@
+import { IWeather } from './Types'
 import Cloudy from '../assets/cloudy.svg'
 import PartlyCloudy from '../assets/partlycloudy.svg'
 import Rain from '../assets/rain.svg'
 import Snow from '../assets/snow.svg'
 import Sun from '../assets/sun.svg'
 import ThunderStorm from '../assets/thunderstorm.svg'
+import Mist from '../assets/mist.svg'
 
 interface StatusProps {
-    status: string;
+    status: IWeather;
 }
 
 const Status: React.FC<StatusProps> = ({status}) => {
     
     const renderStatusIcon = () => {
-        switch (status) {
+        switch (status.main) {
             case "Clouds":
-                return Cloudy;
+                if (status.description === 'overcast clouds') return Cloudy
+                return PartlyCloudy;
             case "Atmosphere":
                 return PartlyCloudy
             case "Rain":
@@ -26,7 +29,7 @@ const Status: React.FC<StatusProps> = ({status}) => {
             case "Thunderstorm":
                 return ThunderStorm
             default:
-                return undefined;
+                return Mist
         }
     }
     return (

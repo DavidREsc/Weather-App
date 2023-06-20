@@ -7,6 +7,7 @@ interface CityInputProps {
 const CityInput: React.FC<CityInputProps> = ({handleSubmit}) => {
     const [city, setCity] = useState<string>("");
     return (
+        <section>
         <form className='city-form' onSubmit={(e) => handleSubmit(e, city)}>
             <input 
                 type='text' 
@@ -20,6 +21,7 @@ const CityInput: React.FC<CityInputProps> = ({handleSubmit}) => {
             </input>
             <input type='submit' className='city-submit' value='Search'/>
         </form>
+        </section>
     )
 }
 
