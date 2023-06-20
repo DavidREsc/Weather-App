@@ -26,6 +26,7 @@ export interface ICurrentWeather {
         sunset: number;
         sunrise: number;
     }
+    cod: number;
 }
 export interface IWeather {
     description: string;
@@ -40,5 +41,6 @@ export interface IHourlyWeather {
 }
 export interface IPreviousWeather {
     hourly: IHourlyWeather[];
+    cod: number;
 }
 export type PreviousWeatherData = IPreviousWeather[]

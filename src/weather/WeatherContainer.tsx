@@ -14,19 +14,24 @@ const Weather: React.FC = () => {
     const apiKey = getApiKey()
 
     // Fetch geo coordinates
-    const handleCity = async (e: FormEvent, city: string) => {
+    const handleCity = async (e: FormEvent, city: string, cb: (msg: string) => void) => {
         e.preventDefault();
         try {
             const response = await fetch(
                 `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=20&appid=${apiKey}`
             );
             const jsonData = await response.json() as CityData;
-            if (!jsonData.length) return
+            if (!jsonData.length) {
+                cb(`No results found for ${city}`)
+                return
+            }
             setCoordinates([jsonData[0].lat, jsonData[0].lon])
             setCurrentCity(jsonData[0])
             setCityResults(jsonData)
+            cb("")
         } catch (e) {
             console.log(e);
+            cb("Error fetching locations")
         }
     }
 
